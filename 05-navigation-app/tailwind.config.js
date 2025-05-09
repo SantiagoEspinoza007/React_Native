@@ -8,7 +8,33 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+
+      colors: {
+        primary: {
+          DEFAULT: "#49129C"
+        },
+        secondary: {
+          DEFAULT: "#B40086",
+          100: "#C51297",
+          200: "#831266"
+        },
+        tertiary: {
+          DEFAULT: "#EF2967",
+        },
+        info: "#3ABFF8",
+        success: "#36D399",
+        warning: "#FBBD23",
+        error: "#F87272",
+      },
+
+      fontFamily: {
+        'work-black': ['WorkSans-Black', 'sans-serif'],
+        'work-light': ['WorkSans-Light', 'sans-serif'],
+        'work-medium': ['WorkSans-Medium', 'sans-serif'],
+      },
+
+    },
   },
   plugins: [],
 }
