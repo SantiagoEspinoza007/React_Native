@@ -10,7 +10,7 @@ const TabsLayout = () => {
         tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
-            backgroundColor: "black",
+            backgroundColor: "white",
         },
       }}
     >

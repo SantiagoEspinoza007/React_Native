@@ -28,11 +28,11 @@ const HomeScreen = () => {
         >
           Settings
         </CustomButton>
-        <Link href={"/(stack)/products"} asChild>
+        <Link href={"/tabs/(stack)/products"} asChild>
           <CustomButton
           variant="textonly"
             color="primary"
-            onPress={() => router.push("/tabs/(stack)/products")}
+            onPress={() => router.push("/")}
             className="mb-5"
           >
             Settings
