@@ -8,7 +8,7 @@ const TabsLayout = () => {
       screenOptions={{
         tabBarActiveTintColor: "indigo",
         tabBarShowLabel: false,
-        headerShown: false,
+        // headerShown: false,
         tabBarStyle: {
             backgroundColor: "white",
         },
@@ -18,6 +18,7 @@ const TabsLayout = () => {
         name="(stack)"
         options={{
           title: "Stack",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="person-outline" color={color} />
           ),
