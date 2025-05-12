@@ -11,9 +11,9 @@ export const nowPlayingAction = async () => {
     
     const movies = data.results.map( MovieMapper.fromThemoviDBResponseToMovie);
 
-    console.log("Mapped Movies:", JSON.stringify(movies, null, 2));
+    // console.log("Mapped Movies:", JSON.stringify(movies, null, 2));
 
-    return [];
+    return movies;
   } catch (error) {
     console.error("Error fetching now playing movies:", error);
     throw new Error("Failed to fetch now playing movies");
