@@ -17,12 +17,11 @@ const MoviePoster = ({id, poster, smallPoster = false, className}:Props) => {
         source={{ uri: poster }}
         className=" shadow-lg w-full h-full rounded-2xl"
         style={{
-          width: smallPoster ? 100 : 175,
-          height: smallPoster ? 150 : 250,
+          width: smallPoster ? 90 : 160,
+          height: smallPoster ? 150 : 240,
           borderRadius: 20,
         }}
         resizeMode='cover'
-        blurRadius={0.5}
       />
     </Pressable>
   )

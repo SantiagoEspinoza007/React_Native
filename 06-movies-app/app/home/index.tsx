@@ -1,11 +1,13 @@
 import MainSlidesshow from "@/presentation/components/Movies/MainSlidesshow";
+import MovieHorizontalList from "@/presentation/components/Movies/MovieHorizontalList";
 import { useMovies } from "@/presentation/hooks/useMovies";
-import { ActivityIndicator, Text, View } from "react-native";
+import { ActivityIndicator, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const HomeScreen = () => {
   const safeArea = useSafeAreaInsets();
-  const { nowPlayingQuery } = useMovies();
+  const { nowPlayingQuery, popularQuery, topRatedQuery, upcomingQuery } =
+    useMovies();
 
   if (nowPlayingQuery.isLoading) {
     return (
@@ -16,14 +18,34 @@ const HomeScreen = () => {
   }
 
   return (
-    <View className="mt-20" style={{ paddingTop: safeArea.top }}>
-      <Text className="text-3xl font-bold text-center px-4 mb-2">
-        Movies App
-      </Text>
+    <ScrollView>
+      <View className="mt-2" style={{ paddingTop: safeArea.top }}>
+        <Text className="text-3xl font-bold px-4 mb-2">Movies App</Text>
 
+        <MainSlidesshow movies={nowPlayingQuery.data ?? []} />
 
-      <MainSlidesshow movies={ nowPlayingQuery.data ?? [] } />
-    </View>
+        <MovieHorizontalList
+          title="Popular Movies"
+          movies={popularQuery.data ?? []}
+        />
+
+        <MovieHorizontalList
+          title="Top Rated Movies"
+          movies={topRatedQuery.data ?? []}
+        />
+
+        <MovieHorizontalList
+          title="Coming soon to theaters"
+          movies={upcomingQuery.data ?? []}
+        />
+
+        <MovieHorizontalList
+          movies={upcomingQuery.data ?? []}
+          className="pb-10"
+        />
+
+      </View>
+    </ScrollView>
   );
 };
 
