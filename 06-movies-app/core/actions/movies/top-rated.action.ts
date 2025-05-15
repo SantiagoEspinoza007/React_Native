@@ -3,9 +3,20 @@ import { MoviesDBMoviesResponse } from "@/infrastructure/interfaces/moviedb-resp
 import { MovieMapper } from "@/infrastructure/mappers/movie.mapper";
 
 
-export const topRatedMoviesAction = async () => {
+interface Options {
+  page?: number;
+  limit?: number;
+
+}
+
+
+export const topRatedMoviesAction = async ({page=1, limit=10}: Options) => {
   try {
-    const { data } = await movieApi.get<MoviesDBMoviesResponse>("/top_rated");
+    const { data } = await movieApi.get<MoviesDBMoviesResponse>("/top_rated", {
+      params: {
+        page: page,
+      },
+    });
 
     // console.log("Now Playing Movies:", JSON.stringify(data, null, 2));
     

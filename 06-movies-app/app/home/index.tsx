@@ -31,7 +31,8 @@ const HomeScreen = () => {
 
         <MovieHorizontalList
           title="Top Rated Movies"
-          movies={topRatedQuery.data ?? []}
+          movies={topRatedQuery.data?.pages.flat() ?? []}
+          loadNextPage={topRatedQuery.fetchNextPage}
         />
 
         <MovieHorizontalList
@@ -43,7 +44,6 @@ const HomeScreen = () => {
           movies={upcomingQuery.data ?? []}
           className="pb-10"
         />
-
       </View>
     </ScrollView>
   );
