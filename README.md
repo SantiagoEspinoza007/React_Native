@@ -1,4 +1,9 @@
-## Instalación Native Wind React Native with Expo
+## Create new Project React Native with Expo
+```
+npm create expo@latest
+```
+
+### Instalation Native Wind React Native with Expo
 
 [NativeWind](https://www.nativewind.dev/)
 
