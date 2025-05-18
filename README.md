@@ -42,8 +42,7 @@ If you not have the `metro.config.js` Run:
 ```
 npx expo customize
 ```
-And select babel file
-`babel.config.js`
+And select `babel.config.js`
 ```
 module.exports = function (api) {
   api.cache(true);
@@ -62,7 +61,7 @@ If you not have the `metro.config.js` Run:
 ```
 npx expo customize
 ```
-and select metro file
+and select `metro.config.js`
 ```
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require('nativewind/metro');
@@ -72,4 +71,27 @@ const config = getDefaultConfig(__dirname)
 module.exports = withNativeWind(config, { input: './global.css' })
 ```
 
-5. 
+5. Import your CSS file on your main `Layout`
+```
+import "./global.css"
+ 
+export default App() {
+  /* Your App */
+}
+```
+6. Make sure that in your `app.json` your bundler has switch to metro.
+```
+{
+  "expo": {
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
+```
+7. Typescript file
+If you are working on TypeScript Project you must need to create `nativewind-env.d.ts` file and add a triple-slash directive:
+
+```
+/// <reference types="nativewind/types" />
+```
