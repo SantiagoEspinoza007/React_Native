@@ -1,6 +1,6 @@
 ## Instalación Native Wind React Native with Expo
 
-https://www.nativewind.dev/
+[NativeWind](https://www.nativewind.dev/)
 
 1. Install Nativewind
 Run in your terminal inside the project 
@@ -90,7 +90,7 @@ export default App() {
 }
 ```
 7. Typescript file
-If you are working on TypeScript Project you must need to create `nativewind-env.d.ts` file and add a triple-slash directive:
+If you are working on TypeScript Project you must need to create `nativewind-env.d.ts` file and add a _triple-slash directive_:
 
 ```
 /// <reference types="nativewind/types" />
