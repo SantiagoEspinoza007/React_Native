@@ -38,13 +38,38 @@ Add in your `global.css`
 ```
   
 3. Add the babel preset
-
-babel.config.js
+If you not have the `metro.config.js` Run:
 ```
-const { getDefaultConfig } = require("expo/metro-config")
+npx expo customize
+```
+And select babel file
+`babel.config.js`
+```
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      "nativewind/babel",
+    ],
+    plugins: ['react-native-reanimated/plugin'],
+  };
+};
+```
+
+4. Modify your metro.config.js
+If you not have the `metro.config.js` Run:
+```
+npx expo customize
+```
+and select metro file
+```
+const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require('nativewind/metro');
  
 const config = getDefaultConfig(__dirname)
  
 module.exports = withNativeWind(config, { input: './global.css' })
 ```
+
+5. 
