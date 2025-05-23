@@ -1,5 +1,5 @@
 import { animationMenuRoutes, menuRoutes, uiMenuRoutes } from "@/constants/Routes";
-import MenuItem from "@/presentation/shared/menu/MenuItem";
+import MenuItem from "@/presentation/menu/MenuItem";
 import ThemedView from "@/presentation/shared/ThemedView";
 import React from "react";
 import { View } from "react-native";
